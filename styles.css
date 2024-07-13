@@ -1,118 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>8ball</title>
-    <style>
-        @keyframes shake {
-            0% { transform: rotate(0deg); }
-            25% { transform: rotate(15deg); }
-            50% { transform: rotate(-15deg); }
-            75% { transform: rotate(10deg); }
-            100% { transform: rotate(0deg); }
-        }
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
 
-        @keyframes bodyShake {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(10px, 0); }
-            50% { transform: translate(-10px, 0); }
-            75% { transform: translate(10px, 0); }
-        }
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ffd700; /* Yellow background color */
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #000000; /* Black background color */
-            animation: bodyShake 0.5s ease;
-            animation-play-state: paused; /* Start animation paused */
-        }
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+    padding: 20px;
+    border-radius: 10px;
+}
 
-        .body-shake-animation {
-            animation-play-state: running; /* Play animation when this class is applied */
-        }
+h1 {
+    color: #333;
+}
 
-        .container {
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
-            padding: 20px;
-            border-radius: 10px;
-        }
+#eight-ball {
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    animation: shake 0.5s ease;
+    animation-play-state: paused; /* Start animation paused */
+}
 
-        h1 {
-            color: #333;
-        }
+.shake-animation {
+    animation-play-state: running; /* Play animation when this class is applied */
+}
 
-        #eight-ball {
-            border: 2px solid #333;
-            border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            animation: shake 0.5s ease;
-            animation-play-state: paused; /* Start animation paused */
-        }
+#answer {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+}
 
-        .shake-animation {
-            animation-play-state: running; /* Play animation when this class is applied */
-        }
+#shake-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
 
-        #answer {
-            font-size: 1.5em;
-            font-weight: bold;
-            margin-top: 20px;
-            color: #333;
-        }
-
-        #shake-button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        #shake-button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Magic Eight Ball</h1>
-        <div id="eight-ball"></div>
-        <div id="answer"></div>
-        <button id="shake-button">Shake</button>
-    </div>
-
-    <script>
-        const shakeButton = document.getElementById('shake-button');
-        const eightBall = document.getElementById('eight-ball');
-        const body = document.body;
-
-        shakeButton.addEventListener('click', () => {
-            eightBall.classList.add('shake-animation');
-            body.classList.add('body-shake-animation');
-
-            setTimeout(() => {
-                eightBall.classList.remove('shake-animation');
-                body.classList.remove('body-shake-animation');
-                // Add logic to display answer
-                const answers = ["Yes", "No", "Maybe", "Ask again later"];
-                const randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-                document.getElementById('answer').innerText = randomAnswer;
-            }, 500);
-        });
-    </script>
-</body>
-</html>
+#shake-button:hover {
+    background-color: #0056b3;
+}
