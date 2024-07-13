@@ -21,10 +21,11 @@ body {
     background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
     padding: 20px;
     border-radius: 10px;
+    color: white; /* Make text white */
 }
 
 h1 {
-    color: #333;
+    color: #fff; /* Change h1 color to white */
 }
 
 #eight-ball {
@@ -49,7 +50,7 @@ h1 {
     font-size: 1.5em;
     font-weight: bold;
     margin-top: 20px;
-    color: #333;
+    color: #fff; /* Change answer text color to white */
 }
 
 #shake-button {
