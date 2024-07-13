@@ -4,7 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magic 8-Ball</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes shake {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(-15deg); }
+            75% { transform: rotate(10deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000; /* Black background color */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+            padding: 20px;
+            border-radius: 10px;
+            color: white; /* Make text white */
+        }
+
+        h1 {
+            color: #fff; /* Change h1 color to white */
+        }
+
+        #eight-ball {
+            border: 2px solid #333;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-image: url('https://officialpsds.com/imageview/r1/88/r188qj_large.png?1521316498'); /* Add your image path here */
+            background-size: cover;
+            background-position: center;
+            animation: shake 0.5s ease;
+            animation-play-state: paused; /* Start animation paused */
+        }
+
+        .shake-animation {
+            animation-play-state: running; /* Play animation when this class is applied */
+        }
+
+        #answer {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #fff; /* Change answer text color to white */
+        }
+
+        #shake-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #shake-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -15,6 +86,22 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('shake-button').addEventListener('click', function() {
+            var eightBall = document.getElementById('eight-ball');
+            eightBall.classList.add('shake-animation');
+            setTimeout(function() {
+                eightBall.classList.remove('shake-animation');
+            }, 500);
+
+            var answers = [
+                'Yes', 'No', 'Maybe', 'Ask again later', 
+                'Definitely', 'I don\'t think so', 'Absolutely', 
+                'Cannot predict now'
+            ];
+            var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
+            document.getElementById('answer').textContent = randomAnswer;
+        });
+    </script>
 </body>
 </html>
