@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shaking Webpage</title>
+    <title>8ball</title>
     <style>
         @keyframes shake {
             0% { transform: rotate(0deg); }
@@ -27,7 +27,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #ffd700; /* Yellow background color */
+            background-color: #000000; /* Black background color */
             animation: bodyShake 0.5s ease;
             animation-play-state: paused; /* Start animation paused */
         }
