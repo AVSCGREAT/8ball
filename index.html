@@ -6,9 +6,9 @@
     <title>Magic 8-Ball</title>
     <style>
         @keyframes shake {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
         body {
             font-family: Arial, sans-serif;
@@ -25,11 +25,16 @@
             background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
             padding: 20px;
             border-radius: 10px;
-            color: red; /* Make text white */
+            color: red; /* Make text red */
         }
 
         h1 {
-            color: #ff0000; /* Change h1 color to white */
+            color: #ff0000; /* Change h1 color to red */
+        }
+
+        h2 {
+            color: #fff; /* White text color for h2 */
+            margin-top: 20px; /* Add some top margin */
         }
 
         #eight-ball {
@@ -54,7 +59,7 @@
             font-size: 1.5em;
             font-weight: bold;
             margin-top: 20px;
-            color: #ff0000; /* Change answer text color to white */
+            color: #ff0000; /* Change answer text color to red */
         }
 
         #shake-button {
@@ -75,6 +80,7 @@
     </style>
 </head>
 <body>
+    <h2>Think of your question and click the button</h2>
     <div class="container">
         <h1>Magic 8-Ball</h1>
         <div id="eight-ball">
@@ -92,26 +98,26 @@
             }, 500);
 
             var answers = [
-                 "It is certain.",
-    "It is decidedly so.",
-    "Without a doubt.",
-    "Yes - definitely.",
-    "You may rely on it.",
-    "As I see it, yes.",
-    "Most likely.",
-    "Outlook good.",
-    "Yes.",
-    "Signs point to yes.",
-    "Reply hazy, try again.",
-    "Ask again later.",
-    "Better not tell you now.",
-    "Cannot predict now.",
-    "Concentrate and ask again.",
-    "Don't count on it.",
-    "My reply is no.",
-    "My sources say no.",
-    "Outlook not so good.",
-    "Very doubtful."
+                "It is certain.",
+                "It is decidedly so.",
+                "Without a doubt.",
+                "Yes - definitely.",
+                "You may rely on it.",
+                "As I see it, yes.",
+                "Most likely.",
+                "Outlook good.",
+                "Yes.",
+                "Signs point to yes.",
+                "Reply hazy, try again.",
+                "Ask again later.",
+                "Better not tell you now.",
+                "Cannot predict now.",
+                "Concentrate and ask again.",
+                "Don't count on it.",
+                "My reply is no.",
+                "My sources say no.",
+                "Outlook not so good.",
+                "Very doubtful."
             ];
             var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
             document.getElementById('answer').textContent = randomAnswer;
