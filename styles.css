@@ -34,7 +34,9 @@ h1 {
     height: 200px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #fff;
+    background-image: url('https://officialpsds.com/imageview/r1/88/r188qj_large.png?1521316498'); /* Add your image path here */
+    background-size: cover;
+    background-position: center;
     animation: shake 0.5s ease;
     animation-play-state: paused; /* Start animation paused */
 }
