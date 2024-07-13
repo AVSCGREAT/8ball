@@ -1,3 +1,11 @@
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(15deg); }
+    50% { transform: rotate(-15deg); }
+    75% { transform: rotate(10deg); }
+    100% { transform: rotate(0deg); }
+}
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -27,6 +35,12 @@ h1 {
     margin: 20px auto;
     padding: 20px;
     background-color: #fff;
+    animation: shake 0.5s ease;
+    animation-play-state: paused; /* Start animation paused */
+}
+
+.shake-animation {
+    animation-play-state: running; /* Play animation when this class is applied */
 }
 
 #answer {
@@ -45,4 +59,9 @@ h1 {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0
+    transition: background-color 0.3s ease;
+}
+
+#shake-button:hover {
+    background-color: #0056b3;
+}
