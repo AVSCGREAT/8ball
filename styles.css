@@ -5,10 +5,18 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    background-color: #ffd700; /* Yellow background color */
 }
 
 .container {
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background for content */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: #333;
 }
 
 #eight-ball {
@@ -18,11 +26,14 @@ body {
     height: 200px;
     margin: 20px auto;
     padding: 20px;
+    background-color: #fff;
 }
 
 #answer {
     font-size: 1.5em;
     font-weight: bold;
+    margin-top: 20px;
+    color: #333;
 }
 
 #shake-button {
@@ -34,8 +45,4 @@ body {
     border: none;
     cursor: pointer;
     border-radius: 5px;
-}
-
-#shake-button:hover {
-    background-color: #0056b3;
-}
+    transition: background-color 0
